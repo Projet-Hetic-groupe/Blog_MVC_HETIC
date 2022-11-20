@@ -6,12 +6,13 @@ require_once 'vendor/autoload.php';
 
 // On le path du dossier Controller
 $controllerDir = dirname(__FILE__) . '/src/Controller';
-// On détecte tous les fichiers
+
+// On met les fichiers et sous dossier (si existe) dans un tableau
 $dirs = scandir($controllerDir);
-// Pourquoi on a des . et .. alors que visuellement ils ne sont pas la
+
 $controllers = [];
 
-// On vire ne prends pas en compte les fichier . ..
+// Pour chaque éléments on ajoute dans un tableau (controller) en ingorants la navigation . et ..
 foreach ($dirs as $dir) {
     if ($dir === "." || $dir === "..") {
         continue;
@@ -19,27 +20,23 @@ foreach ($dirs as $dir) {
     $controllers[] = "App\\Controller\\" . pathinfo($controllerDir . DIRECTORY_SEPARATOR . $dir)['filename'];
 
 }
-// On a dans notre array controllers le chemins de chaque controller
-
 
 $routesObj = [];
 
-//On veut instancier chaque route et les associer au controller
-
+// Pour chaque fichier controller
 foreach ($controllers as $controller) {
 
-    // Question prof détails ReflectionClass
+    // On instancie une reflexion class pour chaque controller afin d'obtenir des informations sur cette class (Controller)
     $reflection = new ReflectionClass($controller);
 
-    // Pour chaque controller on détecte chaque méthode
+    // On zoom un peu et on prends chaque méthod dans chaque controller
     foreach ($reflection->getMethods() as $method) {
-
+        //On zoom encore pour avoir tout les attributs
         foreach ($method->getAttributes() as $attribute) {
-            // ON détecte le nombre d'attribute
             /** @var Route $route */
-            // On instancie les route a l'aide des attributs ( 3 attributs = 3 routes)
+            // ON instancie ici la class Route
             $route = $attribute->newInstance();
-            //ON associe le controller et la route
+            //On associe la route au controller
             $route->setController($controller)
                 // On attribut le nom de la méthode (d'ou l'importance de mettre l'attribut route juste au dessus de notre method pour pas associer la route a une autre méthod)
                 ->setAction($method->getName());
@@ -48,15 +45,13 @@ foreach ($controllers as $controller) {
         }
     }
 }
-// Dans notre URL on prends uniqement le / (le premier);
-// $_SERVER['REQUEST_URI'][0];
+
+// A ce stade on sait quoi faire et quand le faire
 
 // ------------------
 
-// Ne comprends pas ça car pas de ?
-// explode("?",$_SERVER['REQUEST_URI'][0])
+// On veut maintenant relier ce que l'utilisateur entre à nos routes.
 
-// on veut supprimer dans tout les cas le dernier / hors la fonction trim supprime le premier du coups on le rajoute manuellement
 $url = "/" . trim(explode("?", $_SERVER['REQUEST_URI'])[0], "/");
 
 foreach ($routesObj as $route) {
@@ -64,12 +59,10 @@ foreach ($routesObj as $route) {
         continue;
     }
 
-    // Ré explication du des 3 dernières lignes
     $controlerClassName = $route->getController();
     $action = $route->getAction();
     $params = $route->mergeParams($url);
 
-    // Que fait le new $controller Classname
     echo [new $controlerClassName, $action](...$params);
     exit();
 }
