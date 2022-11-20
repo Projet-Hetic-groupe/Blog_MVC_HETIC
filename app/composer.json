@@ -1,0 +1,16 @@
+{
+    "version": "1.0.0",
+    "name": "romain/demo",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Romain Lhuillier",
+            "email": "romainlhuillier94@gmail.com"
+        }
+    ],
+    "require": {}
+}
