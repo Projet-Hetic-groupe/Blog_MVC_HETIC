@@ -14,6 +14,7 @@ final class Post extends BaseEntity
     private \DateTime $created_at;
     private \DateTime $updated_at;
 
+
     /**
      * @return int
      */
@@ -98,7 +99,7 @@ final class Post extends BaseEntity
      * @param string $image
      * @return Post
      */
-    public function setImage(string $image): Post
+    public function setImage(?string $image): Post
     {
         $this->image = $image;
         return $this;
