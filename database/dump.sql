@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `Users`(
 );
 
 /* Insertion d'un utilisateur avec le role admin dans la table `User`*/
-INSERT INTO `Users` (`id`, `nom`, `prenom`,`login`, `mdp`, `role`) VALUES
+INSERT INTO `Users` (`id`, `lastname`, `firstname`,`login`, `password`, `role`) VALUES
 ('1', 'Admin', 'Admin', 'admin', '$2y$10$OgGilVcpTrARPRsrx8YZf.GRCGW3EAugei7htlwYaGDdbROVRY2pu', 'admin');
 
 /* Création de la table `Post` */
