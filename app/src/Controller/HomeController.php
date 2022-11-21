@@ -2,16 +2,19 @@
 
 namespace App\Controller;
 
-use App\Base\BaseController;
 use App\Model\Route\Route;
+use App\Base\BaseController;
+use App\Model\Factory\PDO;
+use App\Model\Manager\PostManager;
 
-
-class HomeController extends BaseController
+final class HomeController extends BaseController
 {
-    #[Route('/',name:"homepage",methods:["GET"])]
+    #[Route('/', name: "homepage", methods: ["GET"])]
     public function homepage()
     {
-        $posts= ["hello","World"];
+        $connexionPost = new PostManager(new PDO());
+        $posts = $connexionPost->getAllPosts();
+
 
         $this->render("homepage.php", [
             "posts" => $posts,
