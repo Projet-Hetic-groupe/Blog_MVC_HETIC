@@ -5,22 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ab5dff7-422e-49b9-a21d-cec260d339d8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Views/Admin/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/public/css/admin/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/app/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/baseView.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/baseView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Views/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/homepage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Base/BaseManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Base/BaseManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Base/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Base/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Model/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Entity/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Model/Factory/PDO.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Factory/PDO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Model/Interfaces/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Interfaces/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Model/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/AdminManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/AdminManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/UserManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/dump.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/app/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -45,17 +54,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/romainlhuillier/Desktop/HETIC/Web2/Back/PHP/Projet-Groupe/Blog_MVC_HETIC",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/romainlhuillier/Desktop/HETIC/Web2/Back/PHP/Projet-Groupe/Blog_MVC_HETIC&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -65,6 +77,10 @@
       <option name="presentableId" value="Default" />
       <updated>1668964903040</updated>
       <workItem from="1668964905701" duration="1692000" />
+      <workItem from="1669056542042" duration="20645000" />
+      <workItem from="1669283856420" duration="454000" />
+      <workItem from="1669296334967" duration="3268000" />
+      <workItem from="1669314600902" duration="3532000" />
     </task>
     <servers />
   </component>
