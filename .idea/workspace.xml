@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ab5dff7-422e-49b9-a21d-cec260d339d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Views/Admin/dashboard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/css/admin/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/app/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Views/baseView.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/baseView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Views/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/homepage.php" afterDir="false" />
@@ -22,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/AdminManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/AdminManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/UserManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/dump.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +76,7 @@
       <workItem from="1669056542042" duration="20645000" />
       <workItem from="1669283856420" duration="454000" />
       <workItem from="1669296334967" duration="3268000" />
-      <workItem from="1669314600902" duration="3532000" />
+      <workItem from="1669314600902" duration="3700000" />
     </task>
     <servers />
   </component>
