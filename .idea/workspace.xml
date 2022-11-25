@@ -5,20 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ab5dff7-422e-49b9-a21d-cec260d339d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/app/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Views/Security/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Views/baseView.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/baseView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Views/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/homepage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Base/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Base/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Base/BaseManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Base/BaseManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Model/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Entity/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Model/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/AdminManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/AdminManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/UserManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +76,10 @@
       <workItem from="1669056542042" duration="20645000" />
       <workItem from="1669283856420" duration="454000" />
       <workItem from="1669296334967" duration="3268000" />
-      <workItem from="1669314600902" duration="3700000" />
+      <workItem from="1669314600902" duration="4204000" />
+      <workItem from="1669375789480" duration="1758000" />
+      <workItem from="1669383192653" duration="1807000" />
+      <workItem from="1669388942761" duration="5755000" />
     </task>
     <servers />
   </component>
@@ -86,6 +89,28 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="3099ff21-7b67-4e86-bd83-c3c060d0008d">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/add_file_missing" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -103,6 +128,28 @@
             </State>
           </value>
         </entry>
+        <entry key="e92ef40a-c1e0-45e7-851d-770a5c18d167">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/add_file_missing" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="3099ff21-7b67-4e86-bd83-c3c060d0008d" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>

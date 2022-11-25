@@ -4,6 +4,7 @@ namespace App\Model\Manager;
 
 use App\Base\BaseManager;
 use App\Model\Entity\Post;
+use App\Model\Entity\User;
 
 class PostManager extends BaseManager
 {
@@ -11,16 +12,18 @@ class PostManager extends BaseManager
     /**
      * @return Post[]
      */
-    public function getAllPosts(): array
-    {
-        $query = $this->pdo->query("select * from Post");
+    public function getAllPosts(): array{
 
-        $users = [];
+        $query = $this->pdo->query("select Users.login, Post.* from `Post` inner join `Users` on Post.authorId = Users.id;");
+//        $query = $this->pdo->query("select * from Post");
+        $posts = [];
 
         while ($data = $query->fetch(\PDO::FETCH_ASSOC)) {
-            $users[] = new Post($data);
+
+            $posts[] = new Post($data);
         }
 
-        return $users;
+
+        return $posts;
     }
 }
