@@ -3,6 +3,7 @@
 namespace App\Model\Entity;
 
 use App\Base\BaseEntity;
+use App\Model\Entity;
 
 final class Post extends BaseEntity
 {

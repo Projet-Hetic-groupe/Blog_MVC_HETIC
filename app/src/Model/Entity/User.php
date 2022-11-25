@@ -11,8 +11,14 @@ final class User extends BaseEntity
     private ?string $firstname;
     private string $login;
     private string $password;
-    private array $role = [];
+    private string $role;
 
+
+    public function getAllInfo(): array
+    {
+        $allInfo = [$this->getId(), $this->getLastname(), $this->getFirstname(), $this->getLogin(), $this->getRole()];
+        return $allInfo;
+    }
     /**
      * @return int
      */
@@ -106,7 +112,7 @@ final class User extends BaseEntity
     /**
      * @return array
      */
-    public function getRole(): array
+    public function getRole(): string
     {
         return $this->role;
     }
@@ -115,10 +121,9 @@ final class User extends BaseEntity
      * @param array $role
      * @return User
      */
-    public function setRole(array $role): User
+    public function setRole(string $role): User
     {
         $this->role = $role;
         return $this;
     }
-
 }
