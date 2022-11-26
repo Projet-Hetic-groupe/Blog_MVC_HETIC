@@ -20,7 +20,7 @@ INSERT INTO `Users` (`id`, `lastname`, `firstname`,`login`, `password`, `role`) 
 /* Création de la table `Post` */
 DROP TABLE IF EXISTS `Post`;
 CREATE TABLE IF NOT EXISTS `Post` (
-    `id` integer NOT NULL,
+    `id` integer NOT NULL AUTO_INCREMENT,
     `title` varchar(255) NOT NULL,
     `content` text NOT NULL,
     `authorId` int NOT NULL,
@@ -40,7 +40,7 @@ INSERT INTO `Post` (`id`,`title`, `content`, `authorId`,`created_at`,`updated_at
 /* Création de la table `Comment` */
 DROP TABLE IF EXISTS `Comment`;
 CREATE TABLE IF NOT EXISTS `Comment` (
-    `id` integer NOT NULL,
+    `id` integer NOT NULL AUTO_INCREMENT,
     `content` text NOT NULL,
     `authorId` int NOT NULL,
     `created_at` datetime,
