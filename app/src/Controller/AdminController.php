@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Base\BaseController;
 use App\Model\Factory\PDO;
 use App\Model\Manager\AdminManager;
-use App\Model\Manager\UserManager;
 use App\Model\Route\Route;
 
 class AdminController extends BaseController
