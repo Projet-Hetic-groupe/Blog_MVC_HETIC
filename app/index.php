@@ -41,6 +41,7 @@ foreach ($controllers as $controller) {
                 // On attribut le nom de la méthode (d'ou l'importance de mettre l'attribut route juste au dessus de notre method pour pas associer la route a une autre méthod)
                 ->setAction($method->getName());
             // On push chaque route dans notre tableau
+
             $routesObj[] = $route;
         }
     }
@@ -65,6 +66,7 @@ foreach ($routesObj as $route) {
 
     echo [new $controlerClassName, $action](...$params);
     exit();
+
 }
 
 echo "NO MATCH";

@@ -4,7 +4,7 @@ namespace App\Model\Factory;
 
 use App\Model\Interfaces\Database;
 
-class PDOFactory implements Database
+class PDO implements Database
 {
     private string $host;
     private string $dbName;

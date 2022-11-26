@@ -10,8 +10,8 @@
 
 1. Administrateur :
    1.1 Gestion de Post :
-        [] 1.1.1 Voir tout les posts.
-        [] 1.1.2 Ajout de posts.
+        [x] 1.1.1 Voir tout les posts.
+        [x] 1.1.2 Ajout de posts.
         [] 1.1.3 Modification des posts présent.
         [] 1.1.4 Suppression des posts présent.
    1.2 Gestion de Commentaire :
@@ -25,15 +25,15 @@
         [] 1.3.3 Modifier une réponse.
         [] 1.3.4 Supprimer une réponse.
    1.4 Gestion des utilisateurs sur une page spécial admin:
-        [] 1.4.1 Voir tout les utilisateurs
-        [] 1.4.2 Modifier un utilisateurs (role admin ou non)
-        [] 1.4.3 Supprimer un autre utilisateur mais pas sois même
-        [] 1.4.4 Créer un utilisateur admin ou non admin
+        [x] 1.4.1 Voir tout les utilisateurs
+        [x] 1.4.2 Modifier un utilisateurs (role admin ou non)
+        [x] 1.4.3 Supprimer un autre utilisateur mais pas sois même
+        [x] 1.4.4 Créer un utilisateur admin ou non admin
 
 2. Pour les utilisateurs:
     2.1 Gestion de Post :
-        [] 2.1.1 Voir tout les posts (connecter ou non).
-        [] 2.1.2 Ajouter un post (uniquement connecter).
+        [x] 2.1.1 Voir tout les posts (connecter ou non).
+        [x] 2.1.2 Ajouter un post (uniquement connecter).
         [] 2.1.3 Modifier uniquement ses posts.
         [] 2.1.4 Supprimer uniquement ses posts.
     2.2 Gestion de Commentaire :
