@@ -92,4 +92,16 @@ abstract class BaseController
             exit();
         }
     }
+
+    /**
+     * @return boolean
+     */
+    public function isSelf($id):bool
+    {
+        if($_SESSION["user"]["id"] == $id ){
+            return true;
+        }
+        return false;
+    }
+
 }
