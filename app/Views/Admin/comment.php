@@ -7,7 +7,7 @@
                 <textarea name="content" id="postContent" cols="40" rows="3"  required></textarea> <br/>
                 <input type="text" name="author" id="authorId">
                 <input type="text" name="title" id="postId" required/> <br/>
-                <input type="submit" value="Post Comment"/>
+                <input type="submit" value="Comment"/>
             </form>
         </div>
     </div>
