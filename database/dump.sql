@@ -53,6 +53,10 @@ CREATE TABLE IF NOT EXISTS `Comment` (
     FOREIGN KEY(`commentId`) REFERENCES `Comment`(`id`)
 );
 
+/* Insertion d'un commentaire dans la table `Comment` */
+INSERT INTO `Comment` (`id`,`content`, `authorId`,`created_at`,`updated_at`,`postId`) VALUES
+(1, 'Lorem ipsum dolor sit amet, Fusce pharetra massa sit amet gravida temp Fusce sit amet bibendum eros, vel varius quam. Maecenas.',1, '2022-11-16 16:15:24', '2022-11-16 16:15:24',1);
+
 
 
 
