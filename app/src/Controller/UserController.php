@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 use App\Base\BaseController;
-use App\Base\BaseManager;
+
 use App\Model\Factory\PDO;
 use App\Model\Manager\UserManager;
 use App\Model\Route\Route;
@@ -59,22 +59,37 @@ final class UserController extends BaseController
         unset($_SESSION["user"]);
         header("Location: http://localhost:2711/", 301);
     }
-//
-//    #[Route('/login', name: "login", methods: ["GET"])]
-//    public function login()
-//    {
-//        if(isset($_SESSION["user"]))
-//        {
-//            header("Location: http://localhost:2711/", 301);
-//            exit;
-//        }
-//
-//        $_SESSION["user"]=[
-//            "login" => "admin",
-//            "role" => "admin",
-//            "id" => "1",
-//        ];
-//        header("Location: http://localhost:2711/", 301);
-//        exit;
-//    }
+
+    #[Route('/login', name: "loginShowForm", methods: ["GET"])]
+    public function loginForm()
+    {
+        self::isNotConnected();
+        $this->render("Security/login.php",[],"Login","../public/css/security/login.css");
+    }
+
+    #[Route('/login',name:"login", methods:["POST"])]
+    public function login()
+    {
+        self::isNotConnected();
+        if(!empty($_POST)) {
+            if(isset($_POST["login"], $_POST["password"]) && !empty($_POST["login"] && !empty($_POST["password"]))) {
+                $login = strip_tags($_POST['login']);
+                $password = strip_tags($_POST['password']);
+
+                $connectionPdo = new UserManager(new PDO());
+                $user = $connectionPdo->login($login,$password);
+
+
+                $_SESSION["user"] = [
+                    "id" => $user->getId(),
+                    "lastname"=>$user->getLastname(),
+                    "firstname"=>$user->getFirstname(),
+                    "login"=>$user->getLogin(),
+                    "role"=>$user->getRole(),
+                ];
+            }
+        }
+        header("Location: http://localhost:2711/", 301);
+        exit;
+    }
 }
