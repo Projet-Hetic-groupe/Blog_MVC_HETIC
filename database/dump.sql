@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS `Post` (
     `content` text NOT NULL,
     `authorId` int NOT NULL,
     `image` varchar (50),
-    `created_at` datetime,
-    `updated_at` datetime,
+    `created_at` datetime DEFAULT NULL,
+    `updated_at` datetime DEFAULT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`)
 );
@@ -43,15 +43,30 @@ CREATE TABLE IF NOT EXISTS `Comment` (
     `id` integer NOT NULL AUTO_INCREMENT,
     `content` text NOT NULL,
     `authorId` int NOT NULL,
-    `created_at` datetime,
-    `updated_at` datetime,
+    `created_at` datetime DEFAULT NULL,
+    `updated_at` datetime DEFAULT NULL,
+    `postId` int NOT NULL,
+    `commentId` int,
+    PRIMARY KEY (`id`),
+    FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`),
+    FOREIGN KEY(`postId`) REFERENCES `Post`(`id`),
+);
+
+/* Création de la table `Answer` */
+DROP TABLE IF EXISTS `Answer`;
+CREATE TABLE IF NOT EXISTS `Answer` (
+    `id` integer NOT NULL AUTO_INCREMENT,
+    `content` text NOT NULL,
+    `authorId` int NOT NULL,
+    `created_at` datetime DEFAULT NULL,
+    `updated_at` datetime DEFAULT NULL,
     `postId` int NOT NULL,
     `commentId` int,
     PRIMARY KEY (`id`),
     FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`),
     FOREIGN KEY(`postId`) REFERENCES `Post`(`id`),
     FOREIGN KEY(`commentId`) REFERENCES `Comment`(`id`)
-);
+    );
 
 
 
