@@ -9,14 +9,14 @@ use App\Model\Factory\PDO;
 
 class CommentController extends BaseController
 {
-    #[Route('/', name: "homepage", methods: ["GET"])]
-    public function homepage()
+    #[Route('admin/comment', name: "comment", methods: ["GET"])]
+    public function commentPage()
     {
         $connexionPost = new CommentManager(new PDO());
         $comments = $connexionPost->getAllComments();
 
 
-        $this->render("comment.php", [
+        $this->render("admin/comment.php", [
             "comments" => $comments,
         ], "Accueil");
     }
