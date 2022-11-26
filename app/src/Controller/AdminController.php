@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Base\BaseController;
 use App\Model\Factory\PDO;
 use App\Model\Manager\AdminManager;
-use App\Model\Manager\UserManager;
 use App\Model\Route\Route;
 
 class AdminController extends BaseController
@@ -54,6 +53,7 @@ class AdminController extends BaseController
     {
         self::isConnected();
         self::isAdmin();
+
         if (!empty($_POST)) {
             if (isset($_POST["lastname"], $_POST["firstname"], $_POST["login"], $_POST["role"]) && !empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['login']) && !empty($_POST["role"])) {
                 $lastname = strip_tags($_POST['lastname']);
@@ -82,13 +82,19 @@ class AdminController extends BaseController
         self::isConnected();
         self::isAdmin();
 
-        if (!empty($_POST)) {
-            if (isset($_POST["delete"]) && !empty($_POST['delete']) && ($_POST['delete'] == "Supprimer") && ($_SESSION['user']["id"] != $id )) {
+        if(self::isSelf($id)){
+            header("Location: http://localhost:2711/admin/dashboard", 301);
+            exit();
+        }else{
+            if (!empty($_POST)) {
+                if (isset($_POST["delete"]) && !empty($_POST['delete']) && ($_POST['delete'] == "Supprimer") && ($_SESSION['user']["id"] != $id )) {
 
-                $connectionPdo = new AdminManager(new PDO());
-                $connectionPdo->deleteUser($id);
+                    $connectionPdo = new AdminManager(new PDO());
+                    $connectionPdo->deleteUser($id);
+                }
             }
         }
+
         header("Location: http://localhost:2711/admin/dashboard", 301);
         exit();
 
