@@ -11,7 +11,7 @@
 1. Administrateur :
    1.1 Gestion de Post :
         [x] 1.1.1 Voir tout les posts.
-        [] 1.1.2 Ajout de posts.
+        [x] 1.1.2 Ajout de posts.
         [] 1.1.3 Modification des posts présent.
         [] 1.1.4 Suppression des posts présent.
    1.2 Gestion de Commentaire :
@@ -32,8 +32,8 @@
 
 2. Pour les utilisateurs:
     2.1 Gestion de Post :
-        [] 2.1.1 Voir tout les posts (connecter ou non).
-        [] 2.1.2 Ajouter un post (uniquement connecter).
+        [x] 2.1.1 Voir tout les posts (connecter ou non).
+        [x] 2.1.2 Ajouter un post (uniquement connecter).
         [] 2.1.3 Modifier uniquement ses posts.
         [] 2.1.4 Supprimer uniquement ses posts.
     2.2 Gestion de Commentaire :
