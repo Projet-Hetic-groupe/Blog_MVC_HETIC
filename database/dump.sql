@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `Post` (
     `title` varchar(255) NOT NULL,
     `content` text NOT NULL,
     `authorId` int NOT NULL,
-    `image` varchar (50),
+    `image` varchar (255),
     `created_at` datetime DEFAULT NULL,
     `updated_at` datetime DEFAULT NULL,
     PRIMARY KEY (`id`),

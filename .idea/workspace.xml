@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ab5dff7-422e-49b9-a21d-cec260d339d8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/public/uploads/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Views/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/homepage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Controller/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/Controller/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Model/Entity/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Entity/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/CommentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/CommentManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Model/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Entity/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/dump.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +61,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/public/uploads" />
       <recent name="$PROJECT_DIR$/app/public" />
     </key>
   </component>

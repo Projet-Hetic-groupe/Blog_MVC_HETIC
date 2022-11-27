@@ -42,18 +42,17 @@ class PostManager extends BaseManager
             $query->bindValue(':created_at', $created_at, \PDO::PARAM_STR);
             $query->bindValue(':updated_at', $updated_at, \PDO::PARAM_STR);
         }else{
+
             $sql = "INSERT INTO `Post` (`title`,`content`,`authorId`,`image`,`created_at`,`updated_at`) VALUES (:title, :content, :authorId,:image,:created_at,:updated_at)";
             $query = $this->pdo->prepare($sql);
 
             $query->bindValue(':title', $title, \PDO::PARAM_STR);
-
             $query->bindValue(':content', $content, \PDO::PARAM_STR);
             $query->bindValue(':authorId', $authorId, \PDO::PARAM_STR);
-            $query->bindValue(':password', $image, \PDO::PARAM_STR);
+            $query->bindValue(':image', $image, \PDO::PARAM_STR);
             $query->bindValue(':created_at', $created_at, \PDO::PARAM_STR);
             $query->bindValue(':updated_at', $updated_at, \PDO::PARAM_STR);
         }
-
         $query->execute();
 
     }

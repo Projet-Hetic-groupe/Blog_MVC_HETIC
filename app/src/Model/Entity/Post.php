@@ -88,7 +88,7 @@ final class Post extends BaseEntity
     /**
      * @return string
      */
-    public function getImage(): string
+    public function getImage(): ?string
     {
         return $this->image;
     }
