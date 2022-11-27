@@ -35,7 +35,12 @@
         </div>
     </div>
 </div>
-
+<div>
+    <form method="POST" id="formDeletePost">
+        <input type="submit" value="Annuler" name="delete">
+        <input type="submit" value="Supprimer" name="delete">
+    </form>
+</div>
 <h1>Ajouter un commentaire</h1>
 <form method="POST" id="formAddComment">
     <textarea name="content"></textarea>
@@ -64,14 +69,14 @@
     </div>
 </div>
 
+
+
 <div>
-    <form method="POST" id="formDeletePost">
+    <form method="POST" id="formDeleteComment">
         <input type="submit" value="Annuler" name="delete">
         <input type="submit" value="Supprimer" name="delete">
     </form>
 </div>
-
-
 
 <?php
 
@@ -103,9 +108,13 @@
                 echo $comment->getContent();
                 echo "<br>";
                 $infoEditComment = [$comment->getId(),$comment->getContent(),$comment->getAuthorId()];
+                $infoDeleteComment = [$comment->getId(),$comment->getAuthorId()];
+                if(isset($_SESSION["user"]) && ($_SESSION["user"]["id"] == $comment->getAuthorId()  || $_SESSION["user"]["role"] == "admin")){
           ?>
                 <button onclick='openModalEditComment(<?= json_encode($infoEditComment) ?>)'>Modifier</button>
+                <button onclick='openModalDeleteComment(<?= json_encode($infoDeleteComment)?>)'>Supprimer</button>
 <?php
+                };
                 echo "<br>";
             }
         }

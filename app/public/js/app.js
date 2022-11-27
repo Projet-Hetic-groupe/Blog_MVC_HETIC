@@ -54,3 +54,8 @@ function openModalEditComment(infoComment){
     url.action = "/edit/comment/" + infoComment[0] +"/"+infoComment[2];
 
 }
+
+function openModalDeleteComment (commentInfo){
+    const url = document.getElementById('formDeleteComment');
+    url.action = "/delete/comment/" + commentInfo[0] + "/" + commentInfo[1];
+}
