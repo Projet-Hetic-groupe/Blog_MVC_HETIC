@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `Comment` (
     `commentId` int,
     PRIMARY KEY (`id`),
     FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`),
-    FOREIGN KEY(`postId`) REFERENCES `Post`(`id`),
+    FOREIGN KEY(`postId`) REFERENCES `Post`(`id`)
 );
 
 /* Création de la table `Answer` */
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `Answer` (
     FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`),
     FOREIGN KEY(`postId`) REFERENCES `Post`(`id`),
     FOREIGN KEY(`commentId`) REFERENCES `Comment`(`id`)
-    );
+);
 
 
 
