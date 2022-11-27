@@ -7,6 +7,22 @@ use App\Model\Entity\Comment;
 
 class CommentManager extends BaseManager
 {
+    public function addAnswer($content,$authorId,$postId,$commentId,$created_at,$updated_at):void
+    {
+        $sql = "INSERT INTO `Comment` (`content`,`authorId`,`postId`,`commentId`,`created_at`,`updated_at`) VALUES (:content, :authorId,:postId, :commentId, :created_at,:updated_at)";
+        $query = $this->pdo->prepare($sql);
+
+        $query->bindValue(':content', $content, \PDO::PARAM_STR);
+        $query->bindValue(':authorId', $authorId, \PDO::PARAM_STR);
+        $query->bindValue(':postId', $postId , \PDO::PARAM_STR);
+
+        $query->bindValue(':commentId', $commentId , \PDO::PARAM_STR);
+        $query->bindValue(':created_at', $created_at, \PDO::PARAM_STR);
+        $query->bindValue(':updated_at', $updated_at, \PDO::PARAM_STR);
+
+        $query->execute();
+    }
+
     public function getAllComments():array
     {
         $query = $this->pdo->query("select * from `Comment`");

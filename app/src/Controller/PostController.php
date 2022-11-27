@@ -19,7 +19,7 @@ class PostController extends BaseController
 
                 $title = strip_tags($_POST["title"]);
                 $content = nl2br(strip_tags($_POST["content"]));
-                $authorId = $_SESSION["user"]["id"];
+                $authorId = strip_tags($_SESSION["user"]["id"]);
                 $image = NULL;
                 $created_at = date('Y-m-d H:i:s');
                 $updated_at = $created_at;

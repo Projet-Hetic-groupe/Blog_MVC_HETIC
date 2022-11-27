@@ -9,6 +9,29 @@ use App\Model\Route\Route;
 
 class CommentController extends BaseController
 {
+    #[Route('/add/answer/{post_Id}/{comment_Id}', name:'addAnswer',methods:["POST"])]
+    public function addAnswer($post_Id,$comment_Id){
+        self::isConnected();
+        if (!empty($_POST)) {
+            if (isset($_POST["content"]) && !empty($_POST['content'])) {
+
+                $content = nl2br(strip_tags($_POST["content"]));
+                $authorId = $_SESSION["user"]["id"];
+                $commentId = strip_tags($comment_Id);
+                $postId = strip_tags($post_Id);
+                $created_at = date('Y-m-d H:i:s');
+                $updated_at = $created_at;
+
+
+                $connectionPdo = new CommentManager(new PDO());
+                $connectionPdo->addAnswer($content,$authorId,$postId,$commentId,$created_at,$updated_at);
+            }
+        }
+
+        header("Location: http://localhost:2711/", 301);
+        exit();
+    }
+
     #[Route('/add/comment/{post_Id}', name:'addComment',methods:["POST"])]
     public function addComment($post_Id){
         self::isConnected();
@@ -16,8 +39,8 @@ class CommentController extends BaseController
             if (isset($_POST["content"]) && !empty($_POST['content'])) {
 
                 $content = nl2br(strip_tags($_POST["content"]));
-                $authorId = $_SESSION["user"]["id"];
-                $postId = $post_Id;
+                $authorId = strip_tags($_SESSION["user"]["id"]);
+                $postId = strip_tags($post_Id);
                 $created_at = date('Y-m-d H:i:s');
                 $updated_at = $created_at;
 

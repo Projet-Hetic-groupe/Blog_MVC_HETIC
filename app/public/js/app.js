@@ -59,3 +59,9 @@ function openModalDeleteComment (commentInfo){
     const url = document.getElementById('formDeleteComment');
     url.action = "/delete/comment/" + commentInfo[0] + "/" + commentInfo[1];
 }
+
+
+function openModalAddAnswer(answerInfo){
+    const url = document.getElementById('formAddAnwser');
+    url.action = "/add/answer/" +answerInfo[0] +'/'+answerInfo[1];
+}
