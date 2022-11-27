@@ -17,8 +17,9 @@ final class UserController extends BaseController
 
     #[Route('/register',name:"register",methods:['POST'])]
     public function register(){
+        self::isNotConnected();
         if (!empty($_POST)) {
-            if (isset($_POST["lastname"], $_POST["firstname"], $_POST["login"], $_POST['password'], $_POST["role"]) && !empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST["role"])) {
+            if (isset($_POST["lastname"], $_POST["firstname"], $_POST["login"], $_POST['password'], $_POST["role"]) && ($_POST["role"]=='user') && !empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['login']) && !empty($_POST['password']) && !empty($_POST["role"])) {
 
                 // Hash password
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
