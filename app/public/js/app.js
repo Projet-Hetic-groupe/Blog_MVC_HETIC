@@ -24,3 +24,15 @@ function openModalDelete($id){
     const url = document.getElementById('formDeleteUser');
     url.action = "/admin/delete/user/" + $id;
 }
+
+function openModalEditPost(Postinfo){
+    const titleInput = document.getElementById('titleInput');
+    const contentInput = document.getElementById('contentInput');
+    const url = document.getElementById('formEditPost');
+
+
+    titleInput.value = Postinfo[1];
+    contentInput.value = Postinfo[2].replace("<br />", '');
+    url.action = "/edit/post/" + Postinfo[0] +"/" + Postinfo[3];
+
+}
