@@ -47,12 +47,32 @@
     ?>>
 </form>
 
+<h1>Modifier un Commentaire</h1>
+<div class="container__background">
+    <div class="card">
+        <div class="card__form">
+            <form method="POST" id="formEditComment">
+                <textarea name="content" id="contentInputComment"></textarea>
+                <input type="submit" value="Modifier"<?php
+                if(!isset($_SESSION["user"]))
+                {
+                    echo "disabled";
+                }
+                ?>>
+            </form>
+        </div>
+    </div>
+</div>
+
 <div>
     <form method="POST" id="formDeletePost">
         <input type="submit" value="Annuler" name="delete">
         <input type="submit" value="Supprimer" name="delete">
     </form>
 </div>
+
+
+
 <?php
 
     foreach ($posts as $post) {
@@ -64,13 +84,13 @@
         echo "<br>";
         echo $post->getUpdated_at();
         echo "<br>";
-        $infoEdit = [$post->getId(),$post->getTitle(),$post->getContent(),$post->getAuthorId()];
-        $infoDelete = [$post->getId(),$post->getAuthorId()];
+        $infoEditPost = [$post->getId(),$post->getTitle(),$post->getContent(),$post->getAuthorId()];
+        $infoDeletePost = [$post->getId(),$post->getAuthorId()];
         if(isset($_SESSION["user"]) && ($_SESSION["user"]["id"] == $post->getAuthorId()  || $_SESSION["user"]["role"] == "admin")){
 
             ?>
-            <button onclick='openModalEditPost(<?=json_encode($infoEdit) ?>)'>Modifier</button>
-            <button onclick='openModalDeletePost(<?= json_encode($infoDelete)?>)'>Supprimer</button>
+            <button onclick='openModalEditPost(<?=json_encode($infoEditPost) ?>)'>Modifier</button>
+            <button onclick='openModalDeletePost(<?= json_encode($infoDeletePost)?>)'>Supprimer</button>
 <?php
               };
         if(isset($_SESSION['user'])){?>
@@ -81,6 +101,11 @@
             if($post->getId() == $comment->getPostId()){
                 echo "<br>";
                 echo $comment->getContent();
+                echo "<br>";
+                $infoEditComment = [$comment->getId(),$comment->getContent(),$comment->getAuthorId()];
+          ?>
+                <button onclick='openModalEditComment(<?= json_encode($infoEditComment) ?>)'>Modifier</button>
+<?php
                 echo "<br>";
             }
         }
