@@ -9,11 +9,9 @@ final class Comment extends BaseEntity
     private int $id;
     private string $content;
     private string $authorId;
-    private string $image;
-    private \DateTime $created_at;
-    private \DateTime $updated_at;
+    private string $created_at;
+    private string $updated_at;
     private int $postId;
-    private ?int $commentId;
 
     /**
      * @return int
@@ -72,52 +70,34 @@ final class Comment extends BaseEntity
     /**
      * @return string
      */
-    public function getImage(): string
-    {
-        return $this->image;
-    }
-
-    /**
-     * @param string $image
-     * @return Comment
-     */
-    public function setImage(string $image): Comment
-    {
-        $this->image = $image;
-        return $this;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getCreatedAt(): \DateTime
+    public function getCreated_at(): string
     {
         return $this->created_at;
     }
 
     /**
-     * @param \DateTime $created_at
+     * @param string $created_at
      * @return Comment
      */
-    public function setCreatedAt(\DateTime $created_at): Comment
+    public function setCreated_at(string $created_at): Comment
     {
         $this->created_at = $created_at;
         return $this;
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getUpdatedAt(): \DateTime
+    public function getUpdated_at(): string
     {
         return $this->updated_at;
     }
 
     /**
-     * @param \DateTime $updated_at
+     * @param string $updated_at
      * @return Comment
      */
-    public function setUpdatedAt(\DateTime $updated_at): Comment
+    public function setUpdated_at(string $updated_at): Comment
     {
         $this->updated_at = $updated_at;
         return $this;

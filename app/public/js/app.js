@@ -41,3 +41,8 @@ function openModalDeletePost (postInfo){
     const url = document.getElementById('formDeletePost');
     url.action = "/delete/post/" + postInfo[0] + "/" + postInfo[1];
 }
+
+function openModalAddComment(id){
+    const url = document.getElementById('formAddComment');
+    url.action = "add/comment/" +id;
+}

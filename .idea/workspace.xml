@@ -9,8 +9,12 @@
       <change beforePath="$PROJECT_DIR$/app/Views/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/homepage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Controller/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Model/Entity/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Entity/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Model/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Entity/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/CommentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/CommentManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/dump.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
