@@ -30,4 +30,24 @@ class CommentController extends BaseController
         header("Location: http://localhost:2711/", 301);
         exit();
     }
+
+
+    #[Route('/edit/comment/{id}/{authorId}',name:'editComment',methods:["POST"])]
+    public function editComment($id,$authorId)
+    {
+        self::isConnected();
+        if (!empty($_POST)) {
+            if (isset($_POST["content"]) && !empty($_POST['content']) && ($_SESSION["user"]["id"]==$authorId || $_SESSION["user"]["role"]=="admin")) {
+
+                $content = nl2br(strip_tags($_POST["content"]));
+                $updated_at = date('Y-m-d H:i:s');
+
+                $connectionPdo = new CommentManager(new PDO());
+                $connectionPdo->editComment($id,$content,$updated_at);
+            }
+        }
+
+        header("Location: http://localhost:2711/", 301);
+        exit();
+    }
 }

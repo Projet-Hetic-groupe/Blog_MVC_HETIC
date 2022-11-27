@@ -46,3 +46,11 @@ function openModalAddComment(id){
     const url = document.getElementById('formAddComment');
     url.action = "add/comment/" +id;
 }
+
+function openModalEditComment(infoComment){
+    const url = document.getElementById('formEditComment');
+    const contentInput = document.getElementById('contentInputComment');
+    contentInput.value = infoComment[1].replace("<br />", '');
+    url.action = "/edit/comment/" + infoComment[0] +"/"+infoComment[2];
+
+}

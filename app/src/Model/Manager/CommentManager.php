@@ -34,4 +34,17 @@ class CommentManager extends BaseManager
 
         $query->execute();
     }
+
+    public function editComment($id,$content,$updated_at)
+    {
+
+        $sql = "update `Comment` set `content` = :content ,`updated_at` = :updated_at where `id` = $id";
+
+        $query = $this->pdo->prepare($sql);
+
+        $query->bindValue(':content', $content, \PDO::PARAM_STR);
+        $query->bindValue(':updated_at', $updated_at, \PDO::PARAM_STR);
+
+        $query->execute();
+    }
 }
