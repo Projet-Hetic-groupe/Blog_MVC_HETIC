@@ -7,7 +7,10 @@
     ?>
 </h1>
 
-<form action="/add/post" method="POST">
+
+
+<form action="/add/post" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" id="image">
     <input type="text" placeholder="Titre du post" name="title">
     <textarea name="content"></textarea>
     <input type="submit" value="Poster" <?php
@@ -93,7 +96,13 @@
 <?php
 
     foreach ($posts as $post) {
+        if($post->getImage()!= NULL){
+            echo "<br>";
+        ?>
 
+        <img src="<?= $post->getImage() ?>">
+        <?php
+        }
         echo "<br>";
         echo $post->getTitle();
         echo "<br>";
