@@ -3,8 +3,7 @@
 namespace App\Model\Entity;
 
 use App\Base\BaseEntity;
-use App\Model\Entity;
-
+use DateTime;
 final class Post extends BaseEntity
 {
     private int $id;
@@ -12,9 +11,8 @@ final class Post extends BaseEntity
     private string $content;
     private string $authorId;
     private ?string $image;
-    private \DateTime $created_at;
-    private \DateTime $updated_at;
-
+    private string $created_at;
+    private string $updated_at;
 
     /**
      * @return int
@@ -107,36 +105,36 @@ final class Post extends BaseEntity
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getCreatedAt(): \DateTime
+    public function getCreated_at(): string
     {
         return $this->created_at;
     }
 
     /**
-     * @param \DateTime $created_at
+     * @param string $created_at
      * @return Post
      */
-    public function setCreatedAt(\DateTime $created_at): Post
+    public function setCreated_at(string $created_at): Post
     {
         $this->created_at = $created_at;
         return $this;
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getUpdatedAt(): \DateTime
+    public function getUpdated_at(): string
     {
         return $this->updated_at;
     }
 
     /**
-     * @param \DateTime $updated_at
+     * @param string $updated_at
      * @return Post
      */
-    public function setUpdatedAt(\DateTime $updated_at): Post
+    public function setUpdated_at(string $updated_at): Post
     {
         $this->updated_at = $updated_at;
         return $this;

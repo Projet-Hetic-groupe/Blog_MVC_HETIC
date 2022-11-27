@@ -21,8 +21,8 @@ class PostManager extends BaseManager
         while ($data = $query->fetch(\PDO::FETCH_ASSOC)) {
 
             $posts[] = new Post($data);
-        }
 
+        }
 
         return $posts;
     }
@@ -56,5 +56,15 @@ class PostManager extends BaseManager
 
         $query->execute();
 
+    }
+
+    public function editPost($id,$title,$content,$updated_at){
+
+        $sql = "update `Post` set `title` = :title ,`content` = :content,`updated_at` = :updated_at where `id` = $id";
+        $query = $this->pdo->prepare($sql);
+        $query->bindValue(':title', $title, \PDO::PARAM_STR);
+        $query->bindValue(':content', $content, \PDO::PARAM_STR);
+        $query->bindValue(':updated_at', $updated_at, \PDO::PARAM_STR);
+        $query->execute();
     }
 }

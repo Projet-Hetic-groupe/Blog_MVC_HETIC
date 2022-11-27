@@ -33,4 +33,24 @@ class PostController extends BaseController
         header("Location: http://localhost:2711/", 301);
         exit();
     }
+
+    #[Route('/edit/post/{id}/{authorId}',name:"editPost", methods:["POST"])]
+    public function editPost($id,$authorId)
+    {
+        self::isConnected();
+        if (!empty($_POST)) {
+            if (isset($_POST["title"], $_POST["content"]) && ($_SESSION["user"]["id"]==$authorId || $_SESSION["user"]["role"]=="admin") && !empty($_POST['title']) && !empty($_POST['content'])) {
+                $title = strip_tags($_POST["title"]);
+                $content = nl2br(strip_tags($_POST["content"]));
+                $updated_at = date('Y-m-d H:i:s');
+
+                $connectionPdo = new PostManager(new PDO());
+                $connectionPdo->editPost($id,$title,$content,$updated_at);
+            }
+        }
+
+        header("Location: http://localhost:2711/", 301);
+        exit();
+    }
+
 }
