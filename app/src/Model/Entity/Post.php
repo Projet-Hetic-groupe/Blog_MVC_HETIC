@@ -9,6 +9,7 @@ final class Post extends BaseEntity
     private string $title;
     private string $content;
     private string $authorId;
+    private string $author;
     private ?string $image;
     private string $created_at;
     private string $updated_at;
@@ -84,6 +85,25 @@ final class Post extends BaseEntity
         $this->authorId = $authorId;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getAuthor(): string
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param string $author
+     * @return Post
+     */
+    public function setAuthor(string $author): Post
+    {
+        $this->author = $author;
+        return $this;
+    }
+
 
     /**
      * @return string

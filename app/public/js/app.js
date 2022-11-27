@@ -1,4 +1,16 @@
+function closeModal(){
+    document.getElementById('card__formEditPost').style.display ="none";
+    document.getElementById('card__formEditComment').style.display ="none";
+    document.getElementById("card__formDeletePost").style.display = "none";
+    document.getElementById("card__formDeleteComment").style.display = "none";
+    document.getElementById('card__formAddComment').style.display= "none";
+    document.getElementById('card__formAddAnswer').style.display= "none";
+    document.getElementById('container__background').style.display = "none";
+}
+
+
 function openModalEdit(userInfo){
+
     const lastname = document.getElementById('lastname');
     const firstname = document.getElementById('firstname');
     const login = document.getElementById('login');
@@ -27,6 +39,10 @@ function openModalDelete(id){
 
 
 function openModalEditPost(Postinfo){
+    closeModal();
+    document.getElementById('container__background').style.display = "flex";
+    const modal = document.getElementById('card__formEditPost')
+    modal.style.display = "flex";
     const titleInput = document.getElementById('titleInput');
     const contentInput = document.getElementById('contentInput');
     const url = document.getElementById('formEditPost');
@@ -38,16 +54,28 @@ function openModalEditPost(Postinfo){
 }
 
 function openModalDeletePost (postInfo){
+    closeModal();
+    document.getElementById('container__background').style.display = "flex";
+    const modal = document.getElementById('card__formDeletePost')
+    modal.style.display = "flex";
     const url = document.getElementById('formDeletePost');
     url.action = "/delete/post/" + postInfo[0] + "/" + postInfo[1];
 }
 
 function openModalAddComment(id){
+    closeModal();
+    document.getElementById('container__background').style.display = "flex";
+    const modal = document.getElementById('card__formAddComment')
+    modal.style.display = "flex";
     const url = document.getElementById('formAddComment');
     url.action = "add/comment/" +id;
 }
 
 function openModalEditComment(infoComment){
+    closeModal();
+    document.getElementById('container__background').style.display = "flex";
+    const modal = document.getElementById('card__formEditComment')
+    modal.style.display = "flex";
     const url = document.getElementById('formEditComment');
     const contentInput = document.getElementById('contentInputComment');
     contentInput.value = infoComment[1].replace("<br />", '');
@@ -56,12 +84,21 @@ function openModalEditComment(infoComment){
 }
 
 function openModalDeleteComment (commentInfo){
+    closeModal();
+    document.getElementById('container__background').style.display = "flex";
+    const modal = document.getElementById('card__formDeleteComment')
+    modal.style.display = "flex";
     const url = document.getElementById('formDeleteComment');
     url.action = "/delete/comment/" + commentInfo[0] + "/" + commentInfo[1];
 }
 
 
 function openModalAddAnswer(answerInfo){
+
+    closeModal();
+    document.getElementById('container__background').style.display = "flex";
+    const modal = document.getElementById('card__formAddAnswer');
+    modal.style.display = "flex";
     const url = document.getElementById('formAddAnwser');
     url.action = "/add/answer/" +answerInfo[0] +'/'+answerInfo[1];
 }

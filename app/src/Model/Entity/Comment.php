@@ -9,6 +9,7 @@ final class Comment extends BaseEntity
     private int $id;
     private string $content;
     private string $authorId;
+    private string $author;
     private string $created_at;
     private string $updated_at;
     private int $postId;
@@ -65,6 +66,24 @@ final class Comment extends BaseEntity
     public function setAuthorId(string $authorId): Comment
     {
         $this->authorId = $authorId;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthor(): string
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param string $author
+     * @return Comment
+     */
+    public function setAuthor(string $author): Comment
+    {
+        $this->author = $author;
         return $this;
     }
 

@@ -1,19 +1,39 @@
-
-<h1>Hello World
+<nav>
+    <h1>HETIC</h1>
     <?php
-        if(isset($_SESSION["user"])){
-            echo $_SESSION["user"]["login"];
-        }
+    if (isset($_SESSION["user"])) {?>
+            <div>
+                <a href="/logout">Se déconnecter</a>
+                <?php if($_SESSION["user"]["role"]=="admin"){ ?>
+                <a href="/admin/dashboard">Admin Dashboard</a>
+                <?php
+                }
+                ?>
+            </div>
+
+        <?php
+    }else{ ?>
+        <a href="/login">Se Connecter</a>
+        <a href="/register">S'inscrire</a>
+        <?php
+    };
     ?>
-</h1>
+</nav>
+<!---->
+<!--<h1>Hello World-->
+<!--    --><?php
+//        if(isset($_SESSION["user"])){
+//            echo $_SESSION["user"]["login"];
+//        }
+//    ?>
+<!--</h1>-->
 
+<form action="/add/post" method="POST" enctype="multipart/form-data" id="formAddPost">
 
-
-<form action="/add/post" method="POST" enctype="multipart/form-data">
-    <input type="file" name="image" id="image">
     <input type="text" placeholder="Titre du post" name="title">
     <textarea name="content"></textarea>
-    <input type="submit" value="Poster" <?php
+    <input type="file" name="image" id="image">
+    <input class="submit button"type="submit" value="Poster" <?php
     if(!isset($_SESSION["user"]))
     {
         echo "disabled";
@@ -21,10 +41,13 @@
     ?>>
 </form>
 
-<h1>Modifier un post</h1>
-<div class="container__background">
-    <div class="card">
-        <div class="card__form">
+<div class="container__background" id="container__background">
+
+    <div class="card" id="cardEditPost">
+
+        <div class="card__form" id="card__formEditPost">
+            <button class="closeModal" onclick="closeModal()">Close</button>
+            <h2>Modifier le Post</h2>
             <form method="POST" id="formEditPost">
                 <input type="text" name="title" id="titleInput">
                 <textarea name="content" id="contentInput"></textarea>
@@ -37,28 +60,11 @@
             </form>
         </div>
     </div>
-</div>
-<div>
-    <form method="POST" id="formDeletePost">
-        <input type="submit" value="Annuler" name="delete">
-        <input type="submit" value="Supprimer" name="delete">
-    </form>
-</div>
-<h1>Ajouter un commentaire</h1>
-<form method="POST" id="formAddComment">
-    <textarea name="content"></textarea>
-    <input type="submit" value="Commenter" <?php
-    if(!isset($_SESSION["user"]))
-    {
-        echo "disabled";
-    }
-    ?>>
-</form>
 
-<h1>Modifier un Commentaire</h1>
-<div class="container__background">
-    <div class="card">
-        <div class="card__form">
+    <div class="card" id="cardEditComment">
+        <div class="card__form" id="card__formEditComment">
+            <button class="closeModal" onclick="closeModal()">Close</button>
+            <h2>Modifier le Commentaire</h2>
             <form method="POST" id="formEditComment">
                 <textarea name="content" id="contentInputComment"></textarea>
                 <input type="submit" value="Modifier"<?php
@@ -70,46 +76,81 @@
             </form>
         </div>
     </div>
+
+    <div class="card" id="cardDeletePost">
+        <div class="card__form" id="card__formDeletePost">
+            <button class="closeModal" onclick="closeModal()">Close</button>
+            <h2>Êtes-vous sûr de supprimer ce post</h2>
+            <form method="POST" id="formDeletePost">
+                <button onclick="closeModal()">Annuler</button>
+                <input type="submit" value="Supprimer" name="delete">
+            </form>
+        </div>
+    </div>
+
+    <div class="card" id="cardDeleteComment">
+        <div class="card__form" id="card__formDeleteComment">
+            <button class="closeModal" onclick="closeModal()">Close</button>
+            <h2>Êtes-vous sûr de supprimer ce commentaire</h2>
+            <form method="POST" id="formDeleteComment">
+                <button onclick="closeModal()">Annuler</button>
+                <input type="submit" value="Supprimer" name="delete">
+            </form>
+        </div>
+    </div>
+
+    <div class="card" id="cardAddComment">
+        <div class="card__form" id="card__formAddComment">
+            <button class="closeModal" onclick="closeModal()">Close</button>
+            <h2>Ajouter un commenter</h2>
+            <form method="POST" id="formAddComment">
+                <textarea name="content"></textarea>
+                <input type="submit" value="Commenter" <?php
+                if(!isset($_SESSION["user"]))
+                {
+                    echo "disabled";
+                }
+                ?>>
+            </form>
+        </div>
+    </div>
+
+    <div class="card" id="cardAddAnswer">
+        <div class="card__form" id="card__formAddAnswer">
+            <button class="closeModal" onclick="closeModal()">Close</button>
+            <h2>Répondre</h2>
+            <form method="POST" id="formAddAnwser">
+                <textarea name="content"></textarea>
+                <input type="submit" value="Répondre" <?php
+                if(!isset($_SESSION["user"]))
+                {
+                    echo "disabled";
+                }
+                ?>>
+            </form>
+        </div>
+    </div>
 </div>
-
-
-
-<div>
-    <form method="POST" id="formDeleteComment">
-        <input type="submit" value="Annuler" name="delete">
-        <input type="submit" value="Supprimer" name="delete">
-    </form>
-</div>
-
-
-<h1>Ajouter une réponse</h1>
-<form method="POST" id="formAddAnwser">
-    <textarea name="content"></textarea>
-    <input type="submit" value="Répondre" <?php
-    if(!isset($_SESSION["user"]))
-    {
-        echo "disabled";
-    }
-    ?>>
-</form>
 
 <?php
 
     foreach ($posts as $post) {
+
+        echo '<div class="big-container-post">';
         if($post->getImage()!= NULL){
             echo "<br>";
         ?>
 
         <img src="<?= $post->getImage() ?>">
         <?php
+            echo "<br>";
         }
-        echo "<br>";
-        echo $post->getTitle();
-        echo "<br>";
-        echo $post->getContent();
-        echo "<br>";
-        echo $post->getUpdated_at();
-        echo "<br>";
+        echo "<h3>Titre : ".$post->getTitle() ."</h3>";
+        echo "<p>Contenue : ".$post->getContent()."</p>";
+        echo "<div class='info-container'>";
+        echo "<p class='info'>Publié le  : " .$post->getUpdated_at()."</p>";
+        echo "<p class='info'>Rédiger par  : " .$post->getAuthor()."</p>";
+        echo"</div>";
         $infoEditPost = [$post->getId(),$post->getTitle(),$post->getContent(),$post->getAuthorId()];
         $infoDeletePost = [$post->getId(),$post->getAuthorId()];
         if(isset($_SESSION["user"]) && ($_SESSION["user"]["id"] == $post->getAuthorId()  || $_SESSION["user"]["role"] == "admin")){
@@ -122,16 +163,20 @@
         if(isset($_SESSION['user'])){?>
             <button onclick='openModalAddComment(<?= $post->getId() ?>)'>Ajouter un commentaire</button>
         <?php
+
         }
+        echo "<h4> Commentaire  : </h4>";
         foreach ($comments as $comment){
             if($post->getId() == $comment->getPostId()){
-                echo "<br>";
-                echo $comment->getContent();
-                echo "<br>";
-
                 if($comment->getCommentId() != null){
-                    echo $comment->getCommentId();
+                    echo "<p class='content'>Réponse au commentaire N°".$comment->getCommentId()."<br>" . $comment->getContent()."</p>";
+                }else{
+                    echo "<p class='content'>Commentaire N°". $comment->getId()."<br>" . $comment->getContent()."</p>";
                 }
+                echo "<div class='info-container'>";
+                echo "<p class='info'>Publié le  : " .$comment->getUpdated_at()."  </p>";
+                echo "<p class='info'>Rédiger par  : " .$comment->getAuthor()."</p>";
+                echo "</div>";
                 $infoEditComment = [$comment->getId(),$comment->getContent(),$comment->getAuthorId()];
                 $infoDeleteComment = [$comment->getId(),$comment->getAuthorId()];
                 if(isset($_SESSION["user"]) && ($_SESSION["user"]["id"] == $comment->getAuthorId()  || $_SESSION["user"]["role"] == "admin")){
@@ -147,5 +192,6 @@
                 }
             }
         }
+        echo "</div>";
     }
 ?>
