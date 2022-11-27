@@ -50,4 +50,20 @@ class CommentController extends BaseController
         header("Location: http://localhost:2711/", 301);
         exit();
     }
+
+
+    #[Route('/delete/comment/{id}/{authorId}', name:'deletePost', methods:["POST"])]
+    public function deleteComment($id,$authorId)
+    {
+        self::isConnected();
+        if (!empty($_POST)) {
+            if (isset($_POST["delete"]) && !empty($_POST['delete']) && ($_POST['delete'] == "Supprimer") && ($_SESSION["user"]["id"]==$authorId || $_SESSION["user"]["role"]=="admin")) {
+
+                $connectionPdo = new CommentManager(new PDO());
+                $connectionPdo->deleteComment($id);
+            }
+        }
+        header("Location: http://localhost:2711/", 301);
+        exit();
+    }
 }

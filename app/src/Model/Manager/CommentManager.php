@@ -47,4 +47,14 @@ class CommentManager extends BaseManager
 
         $query->execute();
     }
+
+    public function deleteComment($id){
+
+        $sql = "DELETE FROM `Comment` WHERE `id` = $id";
+
+        $query = $this->pdo->query($sql);
+
+        $query->execute();
+    }
+
 }
