@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `Post` (
     `created_at` datetime DEFAULT NULL,
     `updated_at` datetime DEFAULT NULL,
     PRIMARY KEY (`id`),
-    FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`)
+    FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`) ON DELETE CASCADE
 );
 
 /* Insertion de deux post du compte Admin dans la table `Post` */
@@ -47,8 +47,9 @@ CREATE TABLE IF NOT EXISTS `Comment` (
     `updated_at` datetime DEFAULT NULL,
     `postId` int NOT NULL,
     PRIMARY KEY (`id`),
-    FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`),
-    FOREIGN KEY(`postId`) REFERENCES `Post`(`id`)
+    FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY(`postId`) REFERENCES `Post`(`id`) ON DELETE CASCADE
+
 );
 INSERT INTO `Comment` (`id`,`content`, `authorId`, `created_at`,`updated_at`,`postId`) VALUES(1,'Premier commenaire',1, '2022-11-16 16:15:24', '2022-11-16 16:15:24',1);
 /* Création de la table `Answer` */
@@ -62,9 +63,9 @@ CREATE TABLE IF NOT EXISTS `Answer` (
     `postId` int NOT NULL,
     `commentId` int,
     PRIMARY KEY (`id`),
-    FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`),
-    FOREIGN KEY(`postId`) REFERENCES `Post`(`id`),
-    FOREIGN KEY(`commentId`) REFERENCES `Comment`(`id`)
+    FOREIGN KEY(`authorId`) REFERENCES `Users`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY(`postId`) REFERENCES `Post`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY(`commentId`) REFERENCES `Comment`(`id`)ON DELETE CASCADE
 );
 
 
