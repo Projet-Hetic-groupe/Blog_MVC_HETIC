@@ -67,4 +67,13 @@ class PostManager extends BaseManager
         $query->bindValue(':updated_at', $updated_at, \PDO::PARAM_STR);
         $query->execute();
     }
+
+    public function deletePost($id){
+
+        $sql = "DELETE FROM `Post` WHERE `id` = $id";
+
+        $query = $this->pdo->query($sql);
+
+        $query->execute();
+    }
 }
