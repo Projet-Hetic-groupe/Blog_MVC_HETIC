@@ -53,4 +53,19 @@ class PostController extends BaseController
         exit();
     }
 
+    #[Route('/delete/post/{id}/{authorId}',name:"deletePost", methods:["POST"])]
+    public function deletePost($id,$authorId)
+    {
+        self::isConnected();
+            if (!empty($_POST)) {
+                if (isset($_POST["delete"]) && !empty($_POST['delete']) && ($_POST['delete'] == "Supprimer") && ($_SESSION["user"]["id"]==$authorId || $_SESSION["user"]["role"]=="admin")) {
+
+                    $connectionPdo = new PostManager(new PDO());
+                    $connectionPdo->deletePost($id);
+                }
+            }
+        header("Location: http://localhost:2711/", 301);
+        exit();
+    }
+
 }

@@ -20,10 +20,11 @@ function openModalEdit(userInfo){
 
 }
 
-function openModalDelete($id){
+function openModalDelete(id){
     const url = document.getElementById('formDeleteUser');
-    url.action = "/admin/delete/user/" + $id;
+    url.action = "/admin/delete/user/" + id;
 }
+
 
 function openModalEditPost(Postinfo){
     const titleInput = document.getElementById('titleInput');
@@ -34,5 +35,9 @@ function openModalEditPost(Postinfo){
     titleInput.value = Postinfo[1];
     contentInput.value = Postinfo[2].replace("<br />", '');
     url.action = "/edit/post/" + Postinfo[0] +"/" + Postinfo[3];
+}
 
+function openModalDeletePost (postInfo){
+    const url = document.getElementById('formDeletePost');
+    url.action = "/delete/post/" + postInfo[0] + "/" + postInfo[1];
 }
