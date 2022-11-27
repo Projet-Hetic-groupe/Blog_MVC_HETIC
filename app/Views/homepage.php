@@ -78,6 +78,18 @@
     </form>
 </div>
 
+
+<h1>Ajouter une réponse</h1>
+<form method="POST" id="formAddAnwser">
+    <textarea name="content"></textarea>
+    <input type="submit" value="Répondre" <?php
+    if(!isset($_SESSION["user"]))
+    {
+        echo "disabled";
+    }
+    ?>>
+</form>
+
 <?php
 
     foreach ($posts as $post) {
@@ -107,6 +119,10 @@
                 echo "<br>";
                 echo $comment->getContent();
                 echo "<br>";
+
+                if($comment->getCommentId() != null){
+                    echo $comment->getCommentId();
+                }
                 $infoEditComment = [$comment->getId(),$comment->getContent(),$comment->getAuthorId()];
                 $infoDeleteComment = [$comment->getId(),$comment->getAuthorId()];
                 if(isset($_SESSION["user"]) && ($_SESSION["user"]["id"] == $comment->getAuthorId()  || $_SESSION["user"]["role"] == "admin")){
@@ -115,7 +131,11 @@
                 <button onclick='openModalDeleteComment(<?= json_encode($infoDeleteComment)?>)'>Supprimer</button>
 <?php
                 };
-                echo "<br>";
+                $infoAddAnswer = [$post->getId(),$comment->getId()];
+                if(isset($_SESSION['user'])){?>
+                    <button onclick='openModalAddAnswer(<?= json_encode($infoAddAnswer) ?>)'>Ajouter une réponse</button>
+                    <?php
+                }
             }
         }
     }

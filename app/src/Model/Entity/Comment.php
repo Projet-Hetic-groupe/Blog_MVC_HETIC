@@ -12,6 +12,7 @@ final class Comment extends BaseEntity
     private string $created_at;
     private string $updated_at;
     private int $postId;
+    private ?int $commentId;
 
     /**
      * @return int
@@ -138,4 +139,5 @@ final class Comment extends BaseEntity
         $this->commentId = $commentId;
         return $this;
     }
+
 }
