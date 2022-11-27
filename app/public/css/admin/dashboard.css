@@ -1,3 +1,36 @@
-h1{
-    color:red;
+.container-deleteUser{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.73);
+}
+
+.container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 12px;
+    background: white;
+    padding: 28px 16px;
+}
+
+.container-deleteUser form{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.container-deleteUser form button{
+    margin-right: 32px;
+}
+.closeModal{
+    top: 8px;
+    right: 16px;
+    position: absolute;
 }

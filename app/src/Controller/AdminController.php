@@ -23,7 +23,7 @@ class AdminController extends BaseController
         ], "Admin Dashboard", "../public/css/admin/dashboard.css");
     }
 
-    #[ROUTE('/admin/add/user', name: "admin.addUser", methods: ["POST"])]
+    #[ROUTE('/admin/add/User', name: "admin.addUser", methods: ["POST"])]
     public function addUser()
     {
         self::isConnected();
