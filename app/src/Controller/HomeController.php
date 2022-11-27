@@ -27,6 +27,6 @@ final class HomeController extends BaseController
             "comments"=>$comments,
 //            "answers"=>$answer,
             "posts" => $posts,
-        ], "Accueil");
+        ], "Accueil","../public/css/homepage.css");
     }
 }

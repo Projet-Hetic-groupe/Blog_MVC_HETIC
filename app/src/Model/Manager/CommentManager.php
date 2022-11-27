@@ -25,8 +25,8 @@ class CommentManager extends BaseManager
 
     public function getAllComments():array
     {
-        $query = $this->pdo->query("select * from `Comment`");
-
+//        $query = $this->pdo->query("select * from `Comment`");
+        $query = $this->pdo->query("select Users.login as author, Comment.* from `Comment` inner join `Users` on Comment.authorId = Users.id;");
         $comments = [];
 
         while ($data = $query->fetch(\PDO::FETCH_ASSOC)) {
