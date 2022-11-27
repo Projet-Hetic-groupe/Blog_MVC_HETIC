@@ -12,18 +12,18 @@
    1.1 Gestion de Post :
         [x] 1.1.1 Voir tout les posts.
         [x] 1.1.2 Ajout de posts.
-        [] 1.1.3 Modification des posts présent.
-        [] 1.1.4 Suppression des posts présent.
+        [x] 1.1.3 Modification des posts présent.
+        [x] 1.1.4 Suppression des posts présent.
    1.2 Gestion de Commentaire :
-        [] 1.2.1 Voir tout les commentaires.
-        [] 1.2.2 Ajout de commentaires.
-        [] 1.2.3 Modification des commentaires.
-        [] 1.2.4 Suppression des commentaires.
+        [x] 1.2.1 Voir tout les commentaires.
+        [x] 1.2.2 Ajout de commentaires.
+        [x] 1.2.3 Modification des commentaires.
+        [x] 1.2.4 Suppression des commentaires.
    1.3 Gestion de Réponse :
-        [] 1.3.1 Voir toutes les réponses.
-        [] 1.3.2 Ajouter une réponse.
-        [] 1.3.3 Modifier une réponse.
-        [] 1.3.4 Supprimer une réponse.
+        [x] 1.3.1 Voir toutes les réponses.
+        [x] 1.3.2 Ajouter une réponse.
+        [x] 1.3.3 Modifier une réponse.
+        [x] 1.3.4 Supprimer une réponse.
    1.4 Gestion des utilisateurs sur une page spécial admin:
         [x] 1.4.1 Voir tout les utilisateurs
         [x] 1.4.2 Modifier un utilisateurs (role admin ou non)
@@ -34,18 +34,18 @@
     2.1 Gestion de Post :
         [x] 2.1.1 Voir tout les posts (connecter ou non).
         [x] 2.1.2 Ajouter un post (uniquement connecter).
-        [] 2.1.3 Modifier uniquement ses posts.
-        [] 2.1.4 Supprimer uniquement ses posts.
+        [x] 2.1.3 Modifier uniquement ses posts.
+        [x] 2.1.4 Supprimer uniquement ses posts.
     2.2 Gestion de Commentaire :
-        [] 2.2.1 Voir tout les commentaires (connecter ou non).
-        [] 2.2.2 Ajouter un commentaire (uniquement connecter).
-        [] 2.2.3 Modifier uniquement ses commentaires.
-        [] 2.2.4 Supprimer uniquement ses commentaires.
+        [x] 2.2.1 Voir tout les commentaires (connecter ou non).
+        [x] 2.2.2 Ajouter un commentaire (uniquement connecter).
+        [x] 2.2.3 Modifier uniquement ses commentaires.
+        [x] 2.2.4 Supprimer uniquement ses commentaires.
     2.3 Gestion de Réponse:
-         [] 2.2.1 Voir tout les réponses (connecter ou non).
-         [] 2.2.2 Ajouter un réponses (uniquement connecter).
-         [] 2.2.3 Modifier uniquement ses réponses.
-         [] 2.2.4 Supprimer uniquement ses réponses.
+         [x] 2.2.1 Voir tout les réponses (connecter ou non).
+         [x] 2.2.2 Ajouter un réponses (uniquement connecter).
+         [x] 2.2.3 Modifier uniquement ses réponses.
+         [x] 2.2.4 Supprimer uniquement ses réponses.
 
 3.Étape plus avancé :
     []3.1 API REST
