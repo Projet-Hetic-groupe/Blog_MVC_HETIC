@@ -14,6 +14,27 @@
 
 <body>
 
+<nav>
+    <h1>HETIC</h1>
+    <?php
+    if (isset($_SESSION["user"])) {?>
+        <div>
+            <a href="/logout">Se déconnecter</a>
+            <?php if($_SESSION["user"]["role"]=="admin"){ ?>
+                <a href="/admin/dashboard">Admin Dashboard</a>
+                <?php
+            }
+            ?>
+        </div>
+
+        <?php
+    }else{ ?>
+        <a href="/login">Se Connecter</a>
+        <a href="/register">S'inscrire</a>
+        <?php
+    };
+    ?>
+</nav>
 
 <!--    --><?php
 //    if (isset($_SESSION["user"])) {

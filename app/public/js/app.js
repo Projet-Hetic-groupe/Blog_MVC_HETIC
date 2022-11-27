@@ -8,9 +8,13 @@ function closeModal(){
     document.getElementById('container__background').style.display = "none";
 }
 
+function closeModalUser(){
+    document.getElementById('formEditUser').style.display= "none";
+    document.getElementById('container-deleteUser').style.display= "none";
+}
 
 function openModalEdit(userInfo){
-
+    document.getElementById("container__background").style.display = "block";
     const lastname = document.getElementById('lastname');
     const firstname = document.getElementById('firstname');
     const login = document.getElementById('login');
@@ -33,6 +37,8 @@ function openModalEdit(userInfo){
 }
 
 function openModalDelete(id){
+    closeModalUser();
+    document.getElementById('container-deleteUser').style.display = "flex";
     const url = document.getElementById('formDeleteUser');
     url.action = "/admin/delete/user/" + id;
 }
