@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ab5dff7-422e-49b9-a21d-cec260d339d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/public/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/css/homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Views/Admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/Admin/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Views/baseView.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/baseView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Views/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/homepage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/css/admin/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/css/admin/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Model/Entity/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Entity/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Model/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Entity/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/CommentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/CommentManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Model/Manager/PostManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/uploads/0504f1e401e36524d5e9214b9decc24a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/uploads/30ea0eb52e5ac87e99609d5f5d937139.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/uploads/a18055a38dbd55dac9f00314b5ea9166.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/Controller/AdminController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

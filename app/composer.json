@@ -1,5 +1,5 @@
 {
-    "version": "2.10.11",
+    "version": "2.11.11",
     "name": "romain/demo",
     "autoload": {
         "psr-4": {
