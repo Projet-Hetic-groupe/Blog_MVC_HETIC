@@ -3,7 +3,6 @@
 namespace App\Model\Entity;
 
 use App\Base\BaseEntity;
-use DateTime;
 final class Post extends BaseEntity
 {
     private int $id;
